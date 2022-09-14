@@ -14,12 +14,11 @@ export const fetchMessage = () => async (dispatch) => {
 export const messagesReducer = (state = 'Hi', action) => {
   switch (action.type) {
     case 'load':
-      state = action.payload;
-      return state;
+      return action.payload;
 
     default:
       return state;
   }
 };
 
-export const store = configureStore({reducer: messagesReducer}, applyMiddleware(thunk));
+export const store = configureStore({ reducer: messagesReducer }, applyMiddleware(thunk));
